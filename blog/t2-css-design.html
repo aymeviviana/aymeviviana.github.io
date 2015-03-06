@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>CSS: Inline vs. Inline-Block</title>
+    <link type="text/css" rel="stylesheet" href="../styles/default.css"/>
+    <link type="text/css" rel="stylesheet" href="../styles/blog-stylesheet.css"/>
+  </head>
+  <body>
+    <header>
+      <div class="name">Ayme Alvarez</div>
+      <div class="navigation"><a href="../index.html">Home</a> / <a href="#">Resume</a> / <a href="../blog-template.html">Blog</a></div>
+    </header>
+    <article class="post">
+      <h1>CSS: When To Use Inline vs. Inline-Block</h1>
+      <h4>March 6, 2015</h4>
+      <p>There are some specific rules to be aware of before using CSS's display property. Knowing when to use inline, block or inline-block is a lot easier when you understand how each value responds to other properties like margin, padding, height &amp; width. Take a look at the diagrams below for a quick breakdown of each value's behavior. We'll assume the squares below are div's.</p>
+      <h3>Inline</h3>
+      <p>The inline display value puts elements in a horizontal line formation, like the blocks below. This comes at a cost though, because it also prevents you from adjusting the height, width, and the margin &amp; padding of the top and bottom of the inline elements. You can still adjust the left and right margin/padding but in certain circumstances that may not be enough to work with.</p>
+      <p>In the example below, all 4 blocks are the same size (because height and width cannot be adjusted), but there is some space (margin) between a few elements because margin can be adjusted on the left and right of inline elements.</p>
+        <img src="../images/inline.png" alt="visual example of inline element behavior" />
+      <h3>Block</h3>  
+      <p>The display block value creates line breaks between elements and displays them in a vertical formation, it also accommodates adjustments to height and width which is why all 4 blocks are different sizes. Unlike inline, block also respects margin &amp; padding adjustments on all 4 sides of a block element.</p>
+      <img src="../images/block.png" alt="visual example of block element behavior" />
+        <h3>Inline-Block</h3>
+        <p>Finally there's inline-block, which is the perfect love child of inline and block. This value is like inline in that it displays elements in a horizontal orientation but it also accommodates all adjustments to height, width, margin and padding.</p>
+      <img src="../images/inline_block.png" alt="visual example of inline-block behavior" />
+      <p>The follow up question then is...why would we ever use inline if inline-block performs the same function and affords a lot more flexibility? To be continued...</p>
+    </article>
+    <section class="other_posts">
+      <strong>Other Posts:</strong><br>
+      <a href="t1-git-blog.html">Git, GitHub &amp; The Command Line</a></li>
+      <a href="c1-chefs-kitchen.html">Fireside Chat With Shereef</a></li> 
+      <a href="t2-css-design.html">CSS: Inline, Block &amp; Inline-Block</a></li> 
+    </section>
+    <footer></footer>
+  </body>
+</html>
