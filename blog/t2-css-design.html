@@ -16,11 +16,11 @@
       <h4>March 6, 2015</h4>
       <p>There are some specific rules to be aware of before using CSS's display property. Knowing when to use inline, block or inline-block is a lot easier when you understand how each value responds to other properties like margin, padding, height &amp; width. Take a look at the diagrams below for a quick breakdown of each value's behavior. We'll assume the squares below are div's.</p>
       <h3>Inline</h3>
-      <p>The inline display value puts elements in a horizontal line formation, like the blocks below. This comes at a cost though, because it also prevents you from adjusting the height, width, and the margin &amp; padding of the top and bottom of the inline elements. You can still adjust the left and right margin/padding but in certain circumstances that may not be enough to work with.</p>
-      <p>In the example below, all 4 blocks are the same size (because height and width cannot be adjusted), but there is some space (margin) between a few elements because margin can be adjusted on the left and right of inline elements.</p>
+      <p>The inline display value puts elements in a horizontal line formation, like the blocks below. This comes at a cost though, because it also prevents you from adjusting the height, width, and top/bottom margin &amp; padding. You can still adjust the left/right margin &amp; padding but that may be inconvenient if your code requires more flexibility.</p>
+      <p>In the example below all 4 blocks are the same size (because height and width cannot be adjusted), but there is some space (margin) between a few elements because margin can be adjusted on the left/right side of inline elements.</p>
         <img src="../images/inline.png" alt="visual example of inline element behavior" />
       <h3>Block</h3>  
-      <p>The display block value creates line breaks between elements and displays them in a vertical formation, it also accommodates adjustments to height and width which is why all 4 blocks are different sizes. Unlike inline, block also respects margin &amp; padding adjustments on all 4 sides of a block element.</p>
+      <p>The display block value creates line breaks between elements and displays them in a vertical formation, it also accommodates adjustments to height and width which is why all 4 blocks are different sizes. Unlike inline, block also respects margin &amp; padding adjustments on all 4 sides.</p>
       <img src="../images/block.png" alt="visual example of block element behavior" />
         <h3>Inline-Block</h3>
         <p>Finally there's inline-block, which is the perfect love child of inline and block. This value is like inline in that it displays elements in a horizontal orientation but it also accommodates all adjustments to height, width, margin and padding.</p>
