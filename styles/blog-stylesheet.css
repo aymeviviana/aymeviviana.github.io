@@ -1,6 +1,5 @@
 .post {
 	background-color: white;
-	border-radius: .25em;
 	border: 3px solid #C8C8C8;
 	width: 70%;
 	min-height: 40em;
@@ -9,6 +8,7 @@
 	padding-right: 1em;
 	display: inline-block;
 	margin-top: 1em;
+	margin-left: .50em;
 }
 
 h1,h2,h3,h4,strong,li,a,pre {
@@ -19,11 +19,12 @@ h1,h2,h3,h4,strong,li,a,pre {
 	width: 25%;
 	min-height: 15em;
 	border: 3px solid #C8C8C8;
-	border-radius: .25em;
 	background-color: white;
 	float: right;
 	margin-top: 1em;
-	padding: 0.5em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	margin-right: .50em;
 }
 
 .other_posts strong {
@@ -44,4 +45,10 @@ pre {
 	min-height: 1em;
 	border-radius: .25em;
 	padding: .50em;
+}
+
+.highlight {
+	background-color: #C4C4C4;
+	border-radius: .25em;
+	padding: .10em;
 }
