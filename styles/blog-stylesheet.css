@@ -23,7 +23,7 @@ h1,h2,h3,h4,strong,li,a,pre {
 	background-color: white;
 	float: right;
 	margin-top: 1em;
-	padding-top: 1em;
+	padding: 0.5em;
 }
 
 .other_posts strong {
