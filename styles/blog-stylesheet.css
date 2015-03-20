@@ -15,6 +15,10 @@ h1,h2,h3,h4,strong,li,a,pre {
 	font-family: 'PT Sans', sans-serif;
 }
 
+ul li, ol li {
+	font-size: 1.25em;
+}
+
 .other_posts {
 	width: 25%;
 	min-height: 15em;
@@ -51,4 +55,13 @@ pre {
 	background-color: #C4C4C4;
 	border-radius: .25em;
 	padding: .10em;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.quote {
+	font-style: italic;
+	background-color: #E9F7FF;
 }
