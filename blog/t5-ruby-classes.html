@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Ruby Classes</title>
+    <link type="text/css" rel="stylesheet" href="../styles/default.css"/>
+    <link type="text/css" rel="stylesheet" href="../styles/blog-stylesheet.css"/>
+  </head>
+  <body>
+    <header>
+      <div class="name">Ayme Alvarez</div>
+      <div class="navigation"><a href="../index.html">Home</a> / <a href="#">Resume</a> / <a href="../blog-template.html">Blog</a></div>
+    </header>
+    <article class="post">
+      <h1>Ruby Classes For Hogwarts!</h1>
+      <h4>March 26, 2015</h4>
+      <p>Ruby Classes are especially useful when solving really, really big problems. The larger the scale of the problem, the more you find yourself needing order. Ruby classes provide this organization by grouping together related methods which helps to reduce the occurrence of redundant code.</p>
+
+      <p>If you've ever found yourself in a situation where you've written 5 different methods that basically do the same thing, establishing a ruby class can help streamline your code.</p>
+
+      <h3>A Close Look At Ruby Class Structure</h3>
+      <p>Let's say you were just offered the extremely coveted role of Logistics Administrator at the prestigious Hogwarts School of Witchcraft and Wizardry (you lucky, lucky bastard). You are now in charge of making sure the world's premiere magic institution runs smoothly. It's a HUGE responsibility and you have no interest in hufflepuffing-it-up. It's time to set up a ruby class.</p>
+
+      <p>You start by naming your class Hogwarts, because all of your logistical management responsibilities exist within the realm of the Hogwarts school</p>
+      
+      <pre><code>class Hogwarts<br><br>end</code></pre>
+
+      <p>Since you'll be in charge of things like drawing up student class schedules and sending out report cards you'll need to gather some information about every student and create processes that will streamline your various responsibilities.</p>
+
+      <p>Each new student will be an "instance" of the Hogwarts class and will provide 3 pieces of information for your database of student information which you will store in your "initialize" method. The three pieces of information include: first name, Wizard/Witch orientation and magical specialty.</p>
+
+      <pre><code>class Hogwarts<br>  def initialize(name, orientation, specialty)<br>    @name = name<br>    @orientation = orientation<br>    @specialty = specialty<br>  end<br>end<br><br>harry_potter = Hogwarts.new("Harry", "Wizard", "Undecided")<br>hermione_granger = Hogwarts.new("Hermione", "Witch", "Expert at everything")<br>ronald_weasley = Hogwarts.new("Ron", "Wizard", "Conjuring Slugs")</code></pre>
+
+      <p>Now that you've gathered information about every student attending Hogwarts, you want to get started operationalizing some high priority processes that'll get the school up and running</p>
+
+      <h3>Hogwarts' Finest Instance Methods</h3>
+      <p>First things first! We must sort each student into their respective Hogwarts house with none other than the Sorting Hat! Later on in the year we'll need to finalize the Quidditch rosters for the upcoming Quidditch World Cup and send out the grades reflecting each student's performance in Snape's Potions class.</p>
+      <p>Since we'll need to evaluate each student along a specific set of metrics to complete each of these tasks we will set up instance methods that will do all the work for us.</p>
+
+      <pre><code>class Hogwarts<br>  def initialize(name, orientation, specialty)<br>    @name = name<br>    @orientation = orientation<br>    @specialty = specialty<br>  end<br><br>  def sorting_hat<br>    # magical sorting hat code<br>  end<br><br>  def quidditch_roster<br>    #magical quidditch roster code<br>  end<br><br>  def potions_grade<br>    #magical potions grade code<br>  end<br>end</code></pre>
+
+      <p>Each of these methods contains variables, code blocks and algorithms that sort students into houses, evaluate their lieklyhood of making the Quidditch team, and compute their Potions grade. To see the results for each student all we need to do is call the repective method on the student's name.</p>
+
+      <pre><code>hermione_granger.potions_grade<br>=> "A+++"<br><br>harry_potter.sorting_hat<br>=> "Gryffindor"<br><br>ronald_weasley.quidditch_roster<br>=> "Position: Keeper"</code></pre>
+
+      <p>All of these methods can be recycled among different instances of the Hogwarts class or, in this case, to any new student. So with a little bit of organization we've managed to streamline 3 important Hogwarts processes that will benefit thousands of students.</p>
+
+      <p>If by any chance you've never seen or watched Harry Potter then you probably didn't understand any of this, in which case... negative 10 points to your house...which is Slytherin!</p>
+
+    </article>
+    <section class="other_posts">
+      <strong>Other Posts:</strong><br>
+      <a href="t1-git-blog.html">Git, GitHub &amp; The Command Line</a></li>
+      <a href="c1-chefs-kitchen.html">Fireside Chat With Shereef</a></li> 
+      <a href="t2-css-design.html">CSS: Inline, Block &amp; Inline-Block</a></li> 
+      <a href="t3-arrays-hashes.html">Ruby Lists: Arrays &amp; Hashes</a></li> 
+      <a href="c3-thinking-style.html">My Gregorc Thinking Style</a></li> 
+      <a href="ruby-enumerable-methods.html">Ruby: Enumerable Methods</a></li>
+      <a href="t4-enumerable-methods.html">About Enumerable#cycle</a></li>
+      <a href="c4-tech-issues.html">Silicon Valley's Talent Shortage</a></li>
+      <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a></li>
+      <a href="c5-feedback.html">Pair Programming</a></li>
+    </section>
+    <footer></footer>
+  </body>
+</html>
