@@ -5,18 +5,26 @@
     <title>Ruby Enumerable#cycle</title>
     <link type="text/css" rel="stylesheet" href="../styles/default.css"/>
     <link type="text/css" rel="stylesheet" href="../styles/blog-stylesheet.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Ek+Mukta' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <header>
-      <div class="name">Ayme Alvarez</div>
-      <div class="navigation"><a href="../index.html">Home</a> / <a href="#">Resume</a> / <a href="../blog-template.html">Blog</a></div>
+      <div class="name"><a href="../index.html">Ayme Alvarez</a></div>
     </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
     <article class="post">
       <h1>Everything you need to know about Enumerable#cycle</h1>
       <h4>March 19, 2015</h4>
       <p><span class="highlight">#cycle</span> is an iterator, like <span class="highlight">#each</span> or <span class="highlight">#collect</span>, that cycles over an object over and over again until you tell it to stop.</p>
 
-      <h3>Important <span class="highlight">#cycle</span> Properties To Remember</h3>
+      <h3>Important #cycle Properties To Remember</h3>
       <ol>
         <li>This method takes an <span class="underline">argument</span> AND a <span class="underline">code block</span></li>
         <li>The argument you pass to <span class="highlight">#cycle</span> determines the number of times it'll cycle through the receiver. If you don't pass an argument, it'll cycle through the receiver forever!</li>
@@ -56,6 +64,8 @@
       <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a></li>
       <a href="c5-feedback.html">Pair Programming</a></li>
     </section>
-    <footer></footer>
+    <footer>
+      <div>© Ayme Alvarez, 2015</div>
+    </footer>
   </body>
 </html>

@@ -5,12 +5,20 @@
     <title>CSS: Inline vs. Inline-Block</title>
     <link type="text/css" rel="stylesheet" href="../styles/default.css"/>
     <link type="text/css" rel="stylesheet" href="../styles/blog-stylesheet.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Ek+Mukta' rel='stylesheet' type='text/css'>
   </head>
   <body>
     <header>
-      <div class="name">Ayme Alvarez</div>
-      <div class="navigation"><a href="../index.html">Home</a> / <a href="#">Resume</a> / <a href="../blog-template.html">Blog</a></div>
+      <div class="name"><a href="../index.html">Ayme Alvarez</a></div>
     </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
     <article class="post">
       <h1>CSS: When To Use Inline vs. Inline-Block</h1>
       <h4>March 6, 2015</h4>
@@ -18,10 +26,10 @@
       <h3>Inline</h3>
       <p>The inline display value puts elements in a horizontal line formation, like the blocks below. This comes at a cost though, because it also prevents you from adjusting the height, width, and top/bottom margin &amp; padding. You can still adjust the left/right margin &amp; padding but that may be inconvenient if your code requires more flexibility.</p>
       <p>In the example below all 4 blocks are the same size (because height and width cannot be adjusted), but there is some space (margin) between a few elements because margin can be adjusted on the left/right side of inline elements.</p>
-        <img src="../images/inline.png" alt="visual example of inline element behavior" />
+      <img src="../images/inline.png" alt="visual example of inline element behavior" /><br><br>
       <h3>Block</h3>  
       <p>The display block value creates line breaks between elements and displays them in a vertical formation, it also accommodates adjustments to height and width which is why all 4 blocks are different sizes. Unlike inline, block also respects margin &amp; padding adjustments on all 4 sides.</p>
-      <img src="../images/block.png" alt="visual example of block element behavior" />
+      <img src="../images/block.png" alt="visual example of block element behavior" /><br><br>
         <h3>Inline-Block</h3>
         <p>Finally there's inline-block, which is the perfect love child of inline and block. This value is like inline in that it displays elements in a horizontal orientation but it also accommodates all adjustments to height, width, margin and padding.</p>
       <img src="../images/inline_block.png" alt="visual example of inline-block behavior" />
@@ -40,6 +48,8 @@
       <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a></li>
       <a href="c5-feedback.html">Pair Programming</a></li>
     </section>
-    <footer></footer>
+    <footer>
+      <div>© Ayme Alvarez, 2015</div>
+    </footer>
   </body>
 </html>
