@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Classes vs. Modules</title>
+    <link type="text/css" rel="stylesheet" href="../styles/default.css"/>
+    <link type="text/css" rel="stylesheet" href="../styles/blog-stylesheet.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Ek+Mukta' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <div class="name"><a href="../index.html">Ayme Alvarez</a></div>
+    </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <article class="post">
+      <h1>Classes vs. Modules</h1>
+      <h4>April 2, 2015</h4>
+      <h3>What Is A Class?</h3>
+      <p>We’re already familiar with classes from our <a href="t5-ruby-classes.html">Hogwarts</a> post. A ruby class is a structure that groups together related methods and variables for the sake of organization and reduced code-redundancy. To complement our knowledge of classes we’ll now learn about Modules.</p>
+
+      <h3>What Is A Module?</h3>
+      <p>According to Codecademy…“You can think of a module as a toolbox that contains a set of methods and constants.”</p>
+
+      <p>Modules are very similar to classes except that modules can’t create instances and can’t have subclasses, they are simply used to store tools.</p>
+
+      <h3>Module Syntax</h3>
+      <p>Creating a module is very simple:</p>
+      <ol>
+        <li>A module is declared with the keyword “module”</li>
+        <li>Module names are written in CapitalizedCamelCase</li>
+      </ol>
+
+      <pre><code>module ModuleName<br><br>  # module code goes here<br><br>end</code></pre><br>
+
+
+      <h3>What Goes In A Module?</h3>
+      <p>Modules commonly store Constants and methods. They tend not to store variables because they have a nasty habit of changing. An example of a ruby constant is PI, which lives in the Math module and is equal to 3.1415….</p>
+
+      <h3>Why Use Modules?</h3>
+      <p>One of the main purposes of modules is to separate methods and constants with the same name. This is called name-spacing.</p>
+
+      <p>For example, if you have the constant PI defined as 3.1415 in the Math module and 3.14 in the Circle module you’ll need a way to differentiate between the two PI’s. Below is an example of name-spacing:</p>
+
+      <pre><code>Math::PI vs. Circle::PI</code></pre>
+
+      <p>The double colon tells ruby which Module you’re searching for the PI constant. In the first example we’re looking for PI in  the Math module and in the second we are looking for PI in the Circle module.</p>
+
+      <p class="quote">“Modules define a namespace, a sandbox in which your methods and constants can play without having to worry about being stepped on by other methods and constants.” <a href="http://ruby-doc.com/docs/ProgrammingRuby/html/tut_modules.html" target="_blank">ruby-doc.com</a></p><br>
+
+      <h3>How Do Classes &amp; Modules Interact?</h3>
+
+      <p>Any class that includes a certain module can use those module’s methods. You can do this by using the keyword “include” followed by the module name, inside of the class.</p>
+
+      <pre><code>class Hogwarts<br>  include Math<br><br>  def calculate_quidditch_goal_post_circumference(radius)<br>    @circumference = 2 * PI * radius<br>  end<br><br>end</code></pre>
+
+      <p>Once a module is explicitly included in a class you no longer have to use the double-colon notation, you can just reference the constant directly.</p>
+    </article>
+    <section class="other_posts">
+      <strong>Other Posts:</strong><br>
+      <a href="t1-git-blog.html">Git, GitHub &amp; The Command Line</a></li>
+      <a href="c1-chefs-kitchen.html">Fireside Chat With Shereef</a></li> 
+      <a href="t2-css-design.html">CSS: Inline, Block &amp; Inline-Block</a></li> 
+      <a href="t3-arrays-hashes.html">Ruby Lists: Arrays &amp; Hashes</a></li> 
+      <a href="c3-thinking-style.html">My Gregorc Thinking Style</a></li> 
+      <a href="ruby-enumerable-methods.html">Ruby: Enumerable Methods</a></li>
+      <a href="t4-enumerable-methods.html">About Enumerable#cycle</a></li>
+      <a href="c4-tech-issues.html">Silicon Valley's Talent Shortage</a></li>
+      <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a></li>
+      <a href="c5-feedback.html">Pair Programming</a></li>
+      <a href="c6-stereotype-threat.html">You Drive</a></li>
+      <a href="t6-oop-concepts.html">Classes vs. Modules</a></li>
+    </section>
+    <footer>
+      <div>© Ayme Alvarez, 2015</div>
+    </footer>
+  </body>
+</html>
