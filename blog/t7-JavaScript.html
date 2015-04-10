@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Javascript vs. Ruby</title>
+    <link type="text/css" rel="stylesheet" href="../styles/default.css"/>
+    <link type="text/css" rel="stylesheet" href="../styles/blog-stylesheet.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Ek+Mukta' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <div class="name"><a href="../index.html">Ayme Alvarez</a></div>
+    </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <article class="post">
+      <h1>How Different Are Ruby &amp; Javascript?</h1>
+      <h4>April 9, 2015</h4>
+      <p>I remember taking the CodeCademy JavaScript track last August. The experience was intesely fulfilling. It was the first programming language I'd ever learned. Of course there were several moments where my brow would suddenly (and aggressively) wrinkle and I felt an overwhelming wave of frustration wash over me. I remember feeling like my brain was crying inside my skull.</p>
+
+      <p>Javascript may be the language of the web but it is NOT a good first language to learn when you first pick up programming. However, returning to Javascript after 4 solid weeks of drilling Ruby made it significantly easier understand everything that CodeCademy track was trying to teach me.</p>
+
+      <h3>They're Not All That Different After All</h3>
+      <p>All the concepts are the same. If you know what a loop does in Ruby, you know what it does in JS. If you know how control flow works in Ruby, then JS won't have many surprises. Ruby data structures like arrays and hashes have their Javascript equivalents, and they look exactly the same.</p>
+
+      <p>The main differences I've encountered between the two languages fall into the following three areas: syntax, class structure and built-in methods/functions.</p>
+      
+      <h3>JavaScript Is Heavy On The Syntax</h3>
+      <p>JS's syntax rules rank a lot higher on the high-maintenance scale than Ruby's. My personal favorites include the mandatory semicolon at the end of each statement, the parentheses and curly braces that  accompany if statements and the usage of the keyword "var" before every new variable declaration.</p>
+
+      <p>You can take a quick look at some key syntactical differences between the two languages on <a href="http://agentcooper.github.io/js-ruby-comparison/">AgentCooper's cheat sheet</a>. The side-by-side comparison does a great job of demonstrating significant overlap between the two languages, with the main difference being the syntactical demands.</p>
+
+      <p>For example, take a look at the way the .each method is implemented in Ruby vs. Javascript. Both chunks of code below function the same way and return the same value, but one requires a few more key strokes than the other:</p>
+
+      <pre><code><strong>Ruby:</strong><br>array = [1, 2, 3, 4]<br>array.each { |x| puts x }<br><br><strong>JavaScript:</strong><br>var array = [1, 2, 3, 4];<br>array.forEach(function(x) {<br>  console.log(x);<br>});</code></pre><br>
+
+      <h3>No Classes For Javascript</h3>
+      <p>Nope. None. The last four weeks of Ruby felt like they were building up to the big reveal that is Ruby classes. Then we dove into Javascript and classes are nowhere to be found. You can, however, use object constructors to simulate Ruby-like, class behavior. Here's some good reading on the subject: <a href="http://www.phpied.com/3-ways-to-define-a-javascript-class/">3 Ways To Define A Javascript Class</a>.</p>
+
+      <h3>Where Are The Enumerables?</h3>
+      <p>Finally, there's a surprising lack of magically powerful enumerable methods to do all the heavy lifting for me when programming in Javascript. I must say, I miss all of my amazing enumerables. Writing out a for loop is not nearly as fun. That said, after 4 solid weeks of practice with Ruby iterators, JavaScript loops don't seem as scary or daunting as they did last August.</p>
+
+      <p>In conclusion, Javascript is not that bad at all, and I hear it only gets better from here.</p>
+      
+    </article>
+    <section class="other_posts">
+      <strong>Other Posts:</strong><br>
+      <a href="t7-values.html">Just Keep Affirming</a>
+      <a href="t7-JavaScript.html">Ruby vs. JavaScript</a>
+      <a href="t6-oop-concepts.html">Classes vs. Modules</a>
+      <a href="c6-stereotype-threat.html">You Drive</a>
+      <a href="c5-feedback.html">Pair Programming</a>
+      <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a>
+      <a href="c4-tech-issues.html">Silicon Valley's Talent Shortage</a>
+      <a href="t4-enumerable-methods.html">About Enumerable#cycle</a>
+      <a href="ruby-enumerable-methods.html">Ruby: Enumerable Methods</a>
+      <a href="c3-thinking-style.html">My Gregorc Thinking Style</a>
+      <a href="t3-arrays-hashes.html">Ruby Lists: Arrays &amp; Hashes</a>
+      <a href="t2-css-design.html">CSS: Inline, Block &amp; Inline-Block</a>
+      <a href="c1-chefs-kitchen.html">Fireside Chat With Shereef</a> 
+      <a href="t1-git-blog.html">Git, GitHub &amp; The Command Line</a>
+    </section>
+    <footer>
+      <div>© Ayme Alvarez, 2015</div>
+    </footer>
+  </body>
+</html>
