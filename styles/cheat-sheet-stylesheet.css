@@ -47,7 +47,6 @@ h2 {
 
 h3 {
   margin-left: 1em;
-  color: white;
 }
 
 a {
@@ -58,6 +57,12 @@ a {
 
 li {
   margin-bottom: 0.5em;
+}
+
+.music {
+  text-align: center;
+  font-family: sans-serif;
+  color: #5AABE6;
 }
 
 footer {
