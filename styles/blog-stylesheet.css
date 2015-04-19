@@ -81,3 +81,7 @@ pre {
 	font-style: italic;
 	background-color: #E9F7FF;
 }
+
+.highlight_change {
+	color: #E3563B;
+}
