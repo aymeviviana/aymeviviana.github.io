@@ -21,7 +21,7 @@
     </nav>
     <article class="post">
       <h1>Everything you need to know about Enumerable#cycle</h1>
-      <h4>March 19, 2015</h4>
+      <p class="date">03.19.2015</p>
       <p><span class="highlight">#cycle</span> is an iterator, like <span class="highlight">#each</span> or <span class="highlight">#collect</span>, that cycles over an object over and over again until you tell it to stop.</p>
 
       <h3>Important #cycle Properties To Remember</h3>
@@ -34,11 +34,30 @@
       <h3>Let's Unpack These Properties</h3>
       <p>To demonstrate how <span class="highlight">#cycle</span> functions, let's take the the array "a" and #cycle through it three times. To do that we'll need to pass it an argument of 3 and specify a code block that allows us to print out each cycle with "puts"</p>
 
-      <pre><code>a = ["Print me 3 times!"]<br>a.cycle(3) { |x| puts x }<br><br>Print me 3 times!<br>Print me 3 times!<br>Print me 3 times!</code></pre>
+      <pre><code>
+      a = ["Print me 3 times!"]
+      a.cycle(3) { |x| puts x }
+
+      Print me 3 times!
+      Print me 3 times!
+      Print me 3 times!
+      </code></pre>
 
       <p>If you decide not to pass an argument then the iterator will become an infinite loop and cycle through the object forever and ever and ever, like so:</p>
 
-      <pre><code>a = ["Print me forever!"]<br>a.cycle { |x| puts x }<br><br>Print me forever!<br>Print me forever!<br>Print me forever!<br>Print me forever!<br>Print me forever!<br>Print me forever!<br>...<br>program crashes<br></code></pre>
+      <pre><code>
+      a = ["Print me forever!"]
+      a.cycle { |x| puts x }
+
+      Print me forever!
+      Print me forever!
+      Print me forever!
+      Print me forever!
+      Print me forever!
+      Print me forever!
+      ...
+      program crashes
+      </code></pre>
 
       <p>If you don't pass a code block to <span class="highlight">#cycle</span> it'll simply return an enumerator. What's an enumerator?</p>
 
@@ -48,30 +67,16 @@
       <img src="../images/irb_cycle_method_returns_enumerator.png" alt="irb screenshot of cycle method returning an enumerator" />
 
       <p>Why you would ever call <span class="highlight">#cycle</span> on an object without a code block? I have no idea, but at least now we know what happens.</p>
-
-      
     </article>
-    <section class="other_posts">
-      <strong>Other Posts:</strong><br>
-      <a href="ruby-class-attributes.html">Class Attributes</a>
-      <a href="t8-tech.html">How Does The Internet Work?</a>
-      <a href="c7-values.html">Just Keep Affirming</a>
-      <a href="t7-JavaScript.html">Ruby vs. JavaScript</a>
-      <a href="t6-oop-concepts.html">Classes vs. Modules</a>
-      <a href="c6-stereotype-threat.html">You Drive</a>
-      <a href="c5-feedback.html">Pair Programming</a>
-      <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a>
-      <a href="c4-tech-issues.html">Silicon Valley's Talent Shortage</a>
-      <a href="t4-enumerable-methods.html">About Enumerable#cycle</a>
-      <a href="ruby-enumerable-methods.html">Ruby: Enumerable Methods</a>
-      <a href="c3-thinking-style.html">My Gregorc Thinking Style</a>
-      <a href="t3-arrays-hashes.html">Ruby Lists: Arrays &amp; Hashes</a>
-      <a href="t2-css-design.html">CSS: Inline, Block &amp; Inline-Block</a>
-      <a href="c1-chefs-kitchen.html">Fireside Chat With Shereef</a> 
-      <a href="t1-git-blog.html">Git, GitHub &amp; The Command Line</a>
-    </section>
+
     <footer>
-      <div>© Ayme Alvarez, 2015</div>
+      <div class="copyright">© Ayme Alvarez, 2015</div>
+      <div class="social_icons">
+        <a href="mailto:ayme.alvarez@gmail.com" target="_blank"><img src="../images/mail_white.png" /></a>
+        <a href="https://www.linkedin.com/pub/ayme-alvarez/9/35b/a67" target="_blank"><img src="../images/linked_in_white.png" /></a>
+        <a href="https://github.com/aymeviviana" target="_blank"><img src="../images/github_white_2.png" /></a>
+        <a href="https://www.facebook.com/aymealvarez" target="_blank"><img src="../images/facebook_white.png" /></a>
+      </div>
     </footer>
   </body>
 </html>

@@ -21,7 +21,7 @@
     </nav>
     <article class="post">
       <h1>10 Useful Enumerable Methods</h1>
-      <h4>March 13, 2015</h4>
+      <p class="date">03.13.2015</p>
       <h3>What does Enumerable Mean?</h3>
       <p>I've been curious about the word "enumerable" ever since I picked up my first Ruby tutorial. Ruby-docs and I don't get along very well so it wasn't a very good place to go to get this question answered. Luckily I found <a href="http://www.eriktrautman.com/posts/ruby-explained-map-select-and-other-enumerable-methods" target="_blank">Erik Trautman's blog</a> and finally came across a readable, human-friendly explanation of the word "Enumerable".</p>
       <p>As Erik elegantly explained, Enumerable is the name of a module that packages together a specific set of methods. So you can think of enumerable simply as a group of methods. There are two important characteristics to remember about this particular module:</p>
@@ -33,67 +33,86 @@
       <h3>Let's Get Into the Methods</h3>
       <p>Ruby-docs.org currently lists 51 methods that belong to the enumerable module, we'll walk through ten of them in this post...just for fun.</p>
 
-      <h4>.each_with_index</h4>
+      <h2>.each_with_index</h2>
       <p>This method take two arguments, the element and element's index, and iterates through the elements in the object it was called one. This method is often used to manipulate object elements according to their index position. In the example below, this method is used to turn an array into a hash by making use of the array elements' index positions.</p>
-      <pre><code>hash = Hash.new<br>["dog", "cat", "bird"].each_with_index { |item, index| hash[index] = item }<br>hash #=> {0 => "dog", 1 => "cat", 2 => "bird"}</code></pre>
+      <pre><code>
+      hash = Hash.new
+      ["dog", "cat", "bird"].each_with_index { |item, index| hash[index] = item }
+      hash #=> {0 => "dog", 1 => "cat", 2 => "bird"}
+      </code></pre>
 
-      <h4>.select</h4>
+      <h2>.select</h2>
       <p>Think of select as a filter. If you apply .select to an array it will filter out elements according to requirements you put in your code block.</p>
-      <pre><code>[1, 2, 3, 4, 5].select { |num| num % 2 == 0}<br>#=> [2, 4]</code></pre>
+      <pre><code>
+      [1, 2, 3, 4, 5].select { |num| num % 2 == 0}
+      #=> [2, 4]
+      </code></pre>
 
-      <h4>.map</h4>
+      <h2>.map</h2>
       <p>Map is similar to the each method. It executes a block of code on each element in an object and returns a new object with the result.</p>
-      <pre><code>(1..5).map { | num| num * num }<br>#=> [1, 4, 9, 16, 25]</code></pre>
+      <pre><code>
+      (1..5).map { | num| num * num }
+      #=> [1, 4, 9, 16, 25]
+      </code></pre>
 
-      <h4>.collect</h4>
+      <h2>.collect</h2>
       <p>Collect works just like map, but it is more conventional to use map.</p>
-      <pre><code>["a", "b", "c", "d","e"].collect { |letter| letter > "c" }<br>#=> [false, false, false, true, true]</code></pre>
+      <pre><code>
+      ["a", "b", "c", "d","e"].collect { |letter| letter > "c" }
+      #=> [false, false, false, true, true]
+      </code></pre>
       
-      <h4>.inject</h4>
+      <h2>.inject</h2>
       <p>Inject combines all the elements in an object cumulatively. This method whatever was returned by the previous iteration into the block for the next iteration. You can pass an initial argument or just leave it empty. It's a great method to use for adding up numbers in an array or solving the factorial problem.</p>
-      <pre><code>[1, 4, 7, 9, 10].inject(0) { |sum, number| sum + number}<br>#=> 31</code></pre>
+      <pre><code>
+      [1, 4, 7, 9, 10].inject(0) { |sum, number| sum + number}
+      #=> 31
+      </code></pre>
 
-      <h4>.any?</h4>
+      <h2>.any?</h2>
       <p>This method always returns a true or false value (boolean). When called, this method syas "do any of the elements i the object satisfy the requirements specified in the code block?". If so, the code block returns true, else false.</p>
-      <pre><code>["thingy", "bob", "pancake"].any? { |word| word.length < 6 }<br>#=> true</code></pre>
+      <pre><code>
+      ["thingy", "bob", "pancake"].any? { |word| word.length < 6 }
+      #=> true
+      </code></pre>
 
-      <h4>.all?</h4>
+      <h2>.all?</h2>
       <p>This method also always returns a boolean. When called, this method basically says "do all the elements in the object satisfy the requirements specified in the code block?". If all elements pass the test then the code block returns true, else false.</p>
-      <pre><code>["thingy", "bob", "pancake"].all? { |word| word.length < 6 }<br>#=> false</code></pre>
+      <pre><code>
+      ["thingy", "bob", "pancake"].all? { |word| word.length < 6 }
+      #=> false
+      </code></pre>
 
-      <h4>.none</h4>
+      <h2>.none</h2>
       <p>None always returns a boolean. When called, it checks all the elements in an object and asks "do NONE of the elements in the object satisfy the requirements in the code block?". If NONE of the elements pass the test, the code block returns true. If at least one element passes the code block requirement then it returns false. </p>
-      <pre><code>["thingy", "bob", "pancake"].none? { |word| word.length < 6 }<br>#=> false</code></pre>
+      <pre><code>
+      ["thingy", "bob", "pancake"].none? { |word| word.length < 6 }
+      #=> false
+      </code></pre>
 
-      <h4>.find</h4>
+      <h2>.find</h2>
       <p>This method finds and returns only the FIRST element in an object that satisfies the requirements specified in the code block.</p>
-      <pre><code>(1..50).find { |num| num % 2 == 0 && num % 5 == 0 }<br>#=> 10</code></pre>
+      <pre><code>
+      (1..50).find { |num| num % 2 == 0 && num % 5 == 0 }
+      #=> 10
+      </code></pre>
 
-      <h4>.group_by</h4>
+      <h2>.group_by</h2>
       <p>This method groups an object's elements according to the code block and returns the result in a hash. The hash keys are the results from the code block and the values are arrays of elements that correspond to the key. </p>
-      <pre><code>(1..10).group_by { |num| num > 5}<br>#=> {false => [1, 2, 3, 4, 5], true => [6, 7, 8, 9, 10]}</code></pre>
+      <pre><code>
+      (1..10).group_by { |num| num > 5}
+      #=> {false => [1, 2, 3, 4, 5], true => [6, 7, 8, 9, 10]}
+      </code></pre>
     </article>
-    <section class="other_posts">
-      <strong>Other Posts:</strong><br>
-      <a href="ruby-class-attributes.html">Class Attributes</a>
-      <a href="t8-tech.html">How Does The Internet Work?</a>
-      <a href="c7-values.html">Just Keep Affirming</a>
-      <a href="t7-JavaScript.html">Ruby vs. JavaScript</a>
-      <a href="t6-oop-concepts.html">Classes vs. Modules</a>
-      <a href="c6-stereotype-threat.html">You Drive</a>
-      <a href="c5-feedback.html">Pair Programming</a>
-      <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a>
-      <a href="c4-tech-issues.html">Silicon Valley's Talent Shortage</a>
-      <a href="t4-enumerable-methods.html">About Enumerable#cycle</a>
-      <a href="ruby-enumerable-methods.html">Ruby: Enumerable Methods</a>
-      <a href="c3-thinking-style.html">My Gregorc Thinking Style</a>
-      <a href="t3-arrays-hashes.html">Ruby Lists: Arrays &amp; Hashes</a>
-      <a href="t2-css-design.html">CSS: Inline, Block &amp; Inline-Block</a>
-      <a href="c1-chefs-kitchen.html">Fireside Chat With Shereef</a> 
-      <a href="t1-git-blog.html">Git, GitHub &amp; The Command Line</a>
-    </section>
+
     <footer>
-      <div>© Ayme Alvarez, 2015</div>
+      <div class="copyright">© Ayme Alvarez, 2015</div>
+      <div class="social_icons">
+        <a href="mailto:ayme.alvarez@gmail.com" target="_blank"><img src="../images/mail_white.png" /></a>
+        <a href="https://www.linkedin.com/pub/ayme-alvarez/9/35b/a67" target="_blank"><img src="../images/linked_in_white.png" /></a>
+        <a href="https://github.com/aymeviviana" target="_blank"><img src="../images/github_white_2.png" /></a>
+        <a href="https://www.facebook.com/aymealvarez" target="_blank"><img src="../images/facebook_white.png" /></a>
+      </div>
     </footer>
   </body>
 </html>

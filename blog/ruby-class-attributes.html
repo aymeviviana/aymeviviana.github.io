@@ -20,8 +20,8 @@
       <a href="../contact.html">Contact</a>
     </nav>
     <article class="post">
-      <h1>Why Use Ruby Class Attributes?</h1>
-      <h4>April 18, 2015</h4>
+      <h1>The Long-Term Value Of Ruby Class Attributes</h1>
+      <p class="dates">04.18.2015</p>
       <p>Ruby attribute readers and writers are handy short-hand for instance variables, but unless you've written a long, complex ruby class that you've changed and maintained over a long period of time it might be difficult to see the value in using attributes.</p>
 
       <p>Before we examine how one can benefit from the use of attributes let's first take a look at the some attribute definitions:</p>
@@ -29,19 +29,63 @@
       <h3>attr_reader</h3>
       <p>attr_reader is a refactoring technique that converts an instance variable into a method that returns the value of the instance variable.</p>
 
-      <pre><code>class Stuff<br>  attr_reader :average<br>  def initialize(average)<br>    @average = average<br>  end<br>end<br><br>thing = Stuff.new(5)<br>thing.average #=> 5<br><br>attr_reader :average <strong>is short-hand for this...</strong><br><br>def average<br>  @average<br>end</code></pre>
+      <pre><code>
+      class Stuff  
+        attr_reader :average
+        def initialize(average)   
+          @average = average  
+        end
+      end
+
+      thing = Stuff.new(5)
+      thing.average #=> 5
+
+      attr_reader :average <strong>is short-hand for this...</strong>
+
+      def average
+        @average
+      end
+      </code></pre>
 
       <p>attr_reader only reveals the value of the instance variable, it does not allow a user to reset the value of the variable, that's what attr_writer is for...</p>
 
       <h3>attr_writer</h3>
       <p>attr_writer converts an instance variable into a method that allows the user to reset the value of that variable.</p>
 
-      <pre><code>class Stuff<br>  attr_writer :average<br>  def initialize(average)<br>    @average = average<br>  end<br>end<br><br>thing = Stuff.new(5)<br>thing.average = 10<br>thing.average #=> 10<br>#the value of .average has been set to 10 from outside of the Stuff class.<br><br>attr_writer :average <strong>is short-hand for this...</strong><br><br>def average=(number)<br>  @average = number<br>end</code></pre>
+      <pre><code>
+      class Stuff 
+        attr_writer :average 
+        def initialize(average)    
+          @average = average
+        end
+      end
+      
+      thing = Stuff.new(5)
+      thing.average = 10
+      thing.average #=> 10
+      #the value of .average has been set to 10 from outside of the Stuff class.
+      
+      attr_writer :average <strong>is short-hand for this...</strong>
+
+      def average=(number) 
+        @average = number
+      end
+      </code></pre>
 
       <h3>attr_accessor</h3>
       <p>attr_accessor turns an instance variable into a method that is both readable and write-able.</p>
 
-      <pre><code>attr_accessor :average <strong>translates to...</strong><br><br>def average<br>  @average<br>end<br><br>def average=(number)<br>  @average = number<br>end</code></pre>
+      <pre><code>
+      attr_accessor :average <strong>translates to...</strong>
+
+      def average
+        @average
+      end
+
+      def average=(number)  
+        @average = number
+      end
+      </code></pre>
 
       <h3>Why Use Attributes?</h3>
       <p>Within the scope of a simple program that unlikely to change much over time, reader/writer/accessor attributes don't seem to offer much value. They're just an extra, unnecessary step. However, most programs aren't very simple and they have the nasty habit of needing to change over time which is exactly when attribute methods begin to show their value.</p>
@@ -50,35 +94,77 @@
 
       <p>If you used an attr_reader when you first designed your program you'll only need to make one change to your program in order to incorporate your new average function.</p>
 
-      <pre><code><strong>THIS:</strong><br><br>class Stuff<br>  attr_writer :average<br>  def initialize(average)<br>    @average = average<br>  end<br><br>  def print_average<br>    puts "#{average}"<br>  end<br>end<br><br><strong>BECOMES THIS:</strong><br><br>class Stuff<br>  <span class="highlight_change">def average(array)<br>    sum = array.inject {|sum, num| sum + num }<br>    average = sum / array.length<br>  end</span><br><br>  def print_average<br>    puts "#{average}"<br>  end<br>end</code></pre>
+      <pre><code>
+      <strong>THIS:</strong>
+      class Stuff  
+        attr_writer :average 
+        def initialize(average)    
+          @average = average 
+        end 
+      
+        def print_average    
+          puts "#{average}"  
+        end
+
+      end
+
+      <strong>BECOMES THIS:</strong>
+
+      class Stuff  
+        <span class="highlight_change">def average(array)
+          sum = array.inject {|sum, num| sum + num }   
+          average = sum / array.length 
+        end</span>
+
+        def print_average   
+          puts "#{average}"  
+        end
+
+      end
+      </code></pre>
 
       <p>If you relied on the @average instance variable instead of an attribute method, you'll have to make a change in <span class="underline">two</span> places in order to implement your new average function.</p>
      
-      <pre><code><strong>THIS:</strong><br><br>class Stuff<br>  def initialize(average)<br>    @average = average<br>  end<br><br>  def print_average<br>    puts @average<br>  end<br>end<br><br><strong>BECOMES THIS:</strong><br><br>class Stuff<br>  <span class="highlight_change">def average(array)<br>    sum = array.inject {|sum, num| sum + num }<br>    average = sum / array.length<br>  end</span><br><br>  def print_average<br>    puts <span class="highlight_change">#{average}</span><br>  end<br>end</code></pre>
+      <pre><code>
+      <strong>THIS:</strong>
+
+      class Stuff
+        def initialize(average)   
+          @average = average
+        end
+
+        def print_average    
+          puts @average 
+        end
+
+      end
+
+      <strong>BECOMES THIS:</strong>
+
+      class Stuff
+        <span class="highlight_change">def average(array)
+          sum = array.inject {|sum, num| sum + num }  
+          average = sum / array.length  
+        end</span>
+
+        def print_average    
+          puts <span class="highlight_change">#{average}</span>
+        end
+
+      end
+      </code></pre>
 
       <p>The difference between the two methods may not seem drastic now, but imagine if in the latter you had scattered @average in fifteen different places all over your Stuff class. Two changes have turned into 16 changes all because we needed to update the value of one instance variable.</p>
     </article>
-    <section class="other_posts">
-      <strong>Other Posts:</strong><br>
-      <a href="ruby-class-attributes.html">Class Attributes</a>
-      <a href="t8-tech.html">How Does The Internet Work?</a>
-      <a href="c7-values.html">Just Keep Affirming</a>
-      <a href="t7-JavaScript.html">Ruby vs. JavaScript</a>
-      <a href="t6-oop-concepts.html">Classes vs. Modules</a>
-      <a href="c6-stereotype-threat.html">You Drive</a>
-      <a href="c5-feedback.html">Pair Programming</a>
-      <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a>
-      <a href="c4-tech-issues.html">Silicon Valley's Talent Shortage</a>
-      <a href="t4-enumerable-methods.html">About Enumerable#cycle</a>
-      <a href="ruby-enumerable-methods.html">Ruby: Enumerable Methods</a>
-      <a href="c3-thinking-style.html">My Gregorc Thinking Style</a>
-      <a href="t3-arrays-hashes.html">Ruby Lists: Arrays &amp; Hashes</a>
-      <a href="t2-css-design.html">CSS: Inline, Block &amp; Inline-Block</a>
-      <a href="c1-chefs-kitchen.html">Fireside Chat With Shereef</a> 
-      <a href="t1-git-blog.html">Git, GitHub &amp; The Command Line</a>
-    </section>
+
     <footer>
-      <div>© Ayme Alvarez, 2015</div>
+      <div class="copyright">© Ayme Alvarez, 2015</div>
+      <div class="social_icons">
+        <a href="mailto:ayme.alvarez@gmail.com" target="_blank"><img src="../images/mail_white.png" /></a>
+        <a href="https://www.linkedin.com/pub/ayme-alvarez/9/35b/a67" target="_blank"><img src="../images/linked_in_white.png" /></a>
+        <a href="https://github.com/aymeviviana" target="_blank"><img src="../images/github_white_2.png" /></a>
+        <a href="https://www.facebook.com/aymealvarez" target="_blank"><img src="../images/facebook_white.png" /></a>
+      </div>
     </footer>
   </body>
 </html>

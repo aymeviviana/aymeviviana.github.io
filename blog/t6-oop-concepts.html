@@ -21,7 +21,7 @@
     </nav>
     <article class="post">
       <h1>Classes vs. Modules</h1>
-      <h4>April 2, 2015</h4>
+      <p date="date">04.02.2015</p>
       <h3>What Is A Class?</h3>
       <p>We’re already familiar with classes from our <a href="t5-ruby-classes.html">Hogwarts</a> post. A ruby class is a structure that groups together related methods and variables for the sake of organization and reduced code-redundancy. To complement our knowledge of classes we’ll now learn about Modules.</p>
 
@@ -37,7 +37,13 @@
         <li>Module names are written in CapitalizedCamelCase</li>
       </ol>
 
-      <pre><code>module ModuleName<br><br>  # module code goes here<br><br>end</code></pre><br>
+      <pre><code>
+      module ModuleName
+
+        # module code goes here
+
+      end
+      </code></pre><br>
 
 
       <h3>What Goes In A Module?</h3>
@@ -48,7 +54,9 @@
 
       <p>For example, if you have the constant PI defined as 3.1415 in the Math module and 3.14 in the Circle module you’ll need a way to differentiate between the two PI’s. Below is an example of name-spacing:</p>
 
-      <pre><code>Math::PI vs. Circle::PI</code></pre>
+      <pre><code>
+      Math::PI vs. Circle::PI
+      </code></pre>
 
       <p>The double colon tells ruby which Module you’re searching for the PI constant. In the first example we’re looking for PI in  the Math module and in the second we are looking for PI in the Circle module.</p>
 
@@ -58,31 +66,28 @@
 
       <p>Any class that includes a certain module can use those module’s methods. You can do this by using the keyword “include” followed by the module name, inside of the class.</p>
 
-      <pre><code>class Hogwarts<br>  include Math<br><br>  def calculate_quidditch_goal_post_circumference(radius)<br>    @circumference = 2 * PI * radius<br>  end<br><br>end</code></pre>
+      <pre><code>
+      class Hogwarts
+        include Math
+
+          def calculate_quidditch_goal_post_circumference(radius)
+              @circumference = 2 * PI * radius
+          end
+
+      end
+      </code></pre>
 
       <p>Once a module is explicitly included in a class you no longer have to use the double-colon notation, you can just reference the constant directly.</p>
     </article>
-    <section class="other_posts">
-      <strong>Other Posts:</strong><br>
-      <a href="ruby-class-attributes.html">Class Attributes</a>
-      <a href="t8-tech.html">How Does The Internet Work?</a>
-      <a href="c7-values.html">Just Keep Affirming</a>
-      <a href="t7-JavaScript.html">Ruby vs. JavaScript</a>
-      <a href="t6-oop-concepts.html">Classes vs. Modules</a>
-      <a href="c6-stereotype-threat.html">You Drive</a>
-      <a href="c5-feedback.html">Pair Programming</a>
-      <a href="t5-ruby-classes.html">Ruby Classes For Hogwarts</a>
-      <a href="c4-tech-issues.html">Silicon Valley's Talent Shortage</a>
-      <a href="t4-enumerable-methods.html">About Enumerable#cycle</a>
-      <a href="ruby-enumerable-methods.html">Ruby: Enumerable Methods</a>
-      <a href="c3-thinking-style.html">My Gregorc Thinking Style</a>
-      <a href="t3-arrays-hashes.html">Ruby Lists: Arrays &amp; Hashes</a>
-      <a href="t2-css-design.html">CSS: Inline, Block &amp; Inline-Block</a>
-      <a href="c1-chefs-kitchen.html">Fireside Chat With Shereef</a> 
-      <a href="t1-git-blog.html">Git, GitHub &amp; The Command Line</a>
-    </section>
+   
     <footer>
-      <div>© Ayme Alvarez, 2015</div>
+      <div class="copyright">© Ayme Alvarez, 2015</div>
+      <div class="social_icons">
+        <a href="mailto:ayme.alvarez@gmail.com" target="_blank"><img src="../images/mail_white.png" /></a>
+        <a href="https://www.linkedin.com/pub/ayme-alvarez/9/35b/a67" target="_blank"><img src="../images/linked_in_white.png" /></a>
+        <a href="https://github.com/aymeviviana" target="_blank"><img src="../images/github_white_2.png" /></a>
+        <a href="https://www.facebook.com/aymealvarez" target="_blank"><img src="../images/facebook_white.png" /></a>
+      </div>
     </footer>
   </body>
 </html>

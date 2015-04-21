@@ -1,52 +1,61 @@
 /* stylings for blog homepage*/
-.featured {
+.summaries {
 	border-right: 1px solid #DBDBDB;
-	width: 72%;
-	display: inline-block;
-	min-height: 50em;
+	width: 50%;
+	height: 100%;
+	display: inline-block;		
 	font-size: 1.25em;
 	text-align: left;
 	padding: 1em;
+	margin-top: 1em;
+	margin-left: 15%;
 }
 
-.featured div {
+.summaries div {
 	border-bottom: 1px solid #DBDBDB;
 	margin-bottom: 2em;
 }
 
-.featured div a {
+.summaries div a {
 	font-size: 1.50em;
+}
+
+.archives {
+	width: 22%;
+	height: 100%;
+	float: right;
+	margin-right: 8%;
+	padding-top: 2em;
+	/*border: 1px solid black;*/
+}
+
+.archives a {
+	text-decoration: none;
+	color: #70AAE2;
+	font-size: 1.25em;
+	display: block;
+	margin-top: 1em;
+}
+
+.archives strong {
+	color: #4D7E8E;
+	text-decoration: underline;
+	text-align: left;
+	font-size: 2em;
 }
 
 /* stylings for blog article pages*/
 .post {
-	border-right: 1px solid #DBDBDB;
-	width: 72%;
-	min-height: 50em;
-	padding-left: 1em;
-	padding-bottom: 1em;
-	padding-right: 1em;
-	display: inline-block;
-	margin-left: .50em;
+	width: 70%;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-bottom: 2em;
 	font-size: 1.25em;
-}
-
-.other_posts {
-	width: 23%;
-	float: right;
-}
-
-.other_posts a {
-	text-decoration: none;
-	color: #70AAE2;
-	font-size: .70em;
-	display: block;
-	text-align: left;
-	margin-top: 1em;
 }
 
 h1 {
 	font-size: 1.75em;
+	color: #4D7E8E;
 }
 
 h3 {
@@ -84,4 +93,12 @@ pre {
 
 .highlight_change {
 	color: #E3563B;
+}
+
+.date {
+	color: white;
+	background-color: #A3BCC4;
+	border-radius: 0.1em;
+	width: 5em;
+	padding-left: 0.5em;
 }
