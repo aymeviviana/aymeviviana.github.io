@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Practical Object-Oriented Design In Ruby</title>
+    <link type="text/css" rel="stylesheet" href="../styles/default.css"/>
+    <link type="text/css" rel="stylesheet" href="../styles/blog-stylesheet.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lobster|Ek+Mukta' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <header>
+      <div class="name"><a href="../index.html">Ayme Alvarez</a></div>
+    </header>
+
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../resume.html">Resume</a>
+      <a href="../projects.html">Projects</a>
+      <a href="../blog.html">Blog</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+    <article class="post">
+      <h1>POODR Recap</h1>
+      <p class="date">04.25.2015</p>
+      <p>Sandi Metz's "Practical Object-Oriented Design In Ruby" provides 9 chapters worth of lessons for designing flexible ruby applications that scale-well over time. In this post we'll summarize the key lessons from all 9 chapters.</p>
+
+      <h3>Chapter 1: Object-Oriented Design</h3>
+      <p>The overarching thesis of this book is summed up in this chapter 1 quote ...</p>
+
+      <p class="quote">"You must not only write code for the feature you plan to deliver today, you must also create code that is amenable to being changed later," and as Sandi Metz clearly puts it in her book "the primary goal of good design is to reduce the cost of change."</p>
+
+      <p>The application you write today will change tomorrow and forgoing investment in application design can mean that your application will eventually reach a point of inflexibility that requires you to re-write the entire thing in order to accommodate new features.</p>
+
+      <h3>Chapter 2: Designing Classes With A Single Responsibility</h3>
+      <p>The classes you create in your program will impact how you think about your program throughout the course of its life cycle. To build maintainable classes and re-usable methods, each class and method should have a single responsibility. The following excerpt summarizes the goal of this chapter perfectly:</p>
+
+      <p class="quote">"Applications that are easy to change consist of classes that are easy to re-use. Reusable classes are pluggable units of well-defined behavior that have few entanglements. An application that is easy to change is like a box of building blocks; you can select just the pieces you need and assemble them in unanticipated ways...A class that has more than one responsibility is difficult to reuse."</p>
+
+      <p>Since we cannot predict how our application will change in the future, planning out a good design at the beginning is difficult to do, but using programming techniques that embrace change can help keep your code flexible.</p>
+
+      <p>Some of these techniques include: Single responsibility, DRY (Don't Repeat Yourself) &amp; hiding instance variables in accessor methods in order to avoid having to find and replace all references to your instance variable in the event your variable value changes to something more complex in the future. </p>
+
+      <h3>Chapter 3: Managing Dependencies</h3>
+      <p>Single responsibility classes and methods collaborate with one another in order to accomplish more complex tasks. For example, a method that calculates and array's length may collaborate with a method that calculates the sum of the array's integers in order to produce an "average". In order to collaborate, these objects must know something about one another, which inevitably creates dependencies. Managing these dependencies is very important to maintaining a flexile program design.</p>
+
+      <p>You can recognize a dependency in your code if you see objects that know:</p>
+
+      <ul>
+        <li>the name of another class</li>
+        <li>the name of a message that it intends to send to someone other than self</li>
+        <li>the arguments that a message requires</li>
+        <li>the order of those arguments.</li>
+      </ul>
+
+      <p>These kinds of dependencies do not allow your program to scale well because they increase the likelihood of having to multiple parts of your program even if your initial intention was to update a single class.</p>
+
+      <p>Here's a good quote from Sandi...</p> 
+
+      <p class="quote">"Every dependency is like a little dot of glue that causes your class to stick to the things it touches. A few dots are necessary, but apply too much glue and your application will harden intoa  solid block. Reducing dependencies means recognizing and removing the ones you don't need."</p>
+
+      <p>Check out depenency management techniques like "Injecting Dependencies," "Isolating Instance Creation," Removing Argument Order Dependencies" and "Choosing Dependency Direciton" in pages 39 - 53.</p>
+
+      <h3>Chapter 4: Creating Flexible Interfaces</h3>
+      <p>Object-Oriented applications are defined by the messages that pass between objects. This message passing takes place along "public" interfaces. A good public interface are made up of "trusting" messages that focus on asking for what the sender wants rather than telling the receiver how to behave.</p>
+
+      <p>For example, if you have a program with two classes, "TripPlanner" and "Mechanic", that prepares bike trips for customers, you'll want to design your methods such that your classes can trust each other to do their job, rather than having one class know too much about the other and, thus, try to micro-manage it.  </p>
+
+      <p>If TripPlanner's job is to make sure the bikes have been prepared by the Mechanic, and Mechanic's job is to pump the tires, lube the chains and check the breaks on all bikes before each trip, then all TripPlanner has to do is send a message to Mechanic asking it to prepare the bikes, it does NOT need to specifically tell it to pump the tires, lube the chain and check the breaks because the Mechanic already knows how to do its job. Creating 3 explicit references to Mechanic's methods within TripPlanner will only increase the chances of having to change TripPlanner every time a new bike preparation method is added to the Mechanic class. </p>
+
+      <h3>Chapter 5: Reducing Costs With Duck-Typing</h3>
+      <p>Ruby relies less on the class of an object and more on its capabilities. Duck Typing measn an object type is defined by what it can do not by what it is. It is the tendency of Ruby to be less concerned with the class of an object and more concerned with what methods can be called on it and what operations can be performed on it. </p>
+
+      <p>In other words, if you have a bunch of classes that have differently named methods that, for the most part, "do" the same thing then you can create a public interface that cuts across classes, this is a duck type. </p>
+
+      <p>This is a tough concept to understand without an explicit example. Please reference pages 87 - 94 for a more thorough understanding of this technique.</p>
+
+      <h3>Chapter 6: Acquiring Behavior Through Inheritance</h3>
+      <p>Ruby has single inheritance, meaning that a superclass may have many subclasses but each subclass is permitted only one superclass.</p>
+
+      <p>Using inheritance correctly requires that you create a superclass that is abstract enough that it only describes parts of an object rather than a whole object. The subclasses that inherit from this abstract superclass should describe the whole object and borrow methods from the superclass that are general enough to be applied all subclasses.</p>
+
+      <p>For example, a Bicycle class can be the superclass to a MountainBike and a RoadBike subclass. While you should expect to create instances of MountainBike and RoadBike (because they represent specific types of bikes) you should not expect to instantiate Bicycle because its contents should be too general to represent a whole bike.</p>
+
+      <p>If that didn't make sense, here's a good quote about inheritance: </p>
+
+      <p class="quote"> Abstract classes exist to be subclassed. This is their sole purpose. They provide a common repository for behavior that is shared across a set of subclasses--subclasses that in turn supply specializations.</p>
+
+      <p>Chapters 7 - 9 coming soon!</p>
+      
+    </article>
+
+    <footer>
+      <div class="copyright">© Ayme Alvarez, 2015</div>
+      <div class="social_icons">
+        <a href="mailto:ayme.alvarez@gmail.com" target="_blank"><img src="../images/mail_white.png" /></a>
+        <a href="https://www.linkedin.com/pub/ayme-alvarez/9/35b/a67" target="_blank"><img src="../images/linked_in_white.png" /></a>
+        <a href="https://github.com/aymeviviana" target="_blank"><img src="../images/github_white_2.png" /></a>
+        <a href="https://www.facebook.com/aymealvarez" target="_blank"><img src="../images/facebook_white.png" /></a>
+      </div>
+    </footer>
+  </body>
+</html>
